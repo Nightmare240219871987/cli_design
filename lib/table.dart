@@ -18,6 +18,10 @@ class Table {
   // Methoden
   void printHeader(String title) {
     int titleLength = title.length;
+    if (titleLength % 2 == 1) {
+      titleLength++;
+      title = title + " ";
+    }
     int signWidth = this._width - titleLength;
 
     print(" " + "_" * (this._width - 1));
@@ -33,8 +37,12 @@ class Table {
 
   void printRow(String content, bool end) {
     int contentLength = content.length;
+    if (contentLength % 2 == 1) {
+      contentLength++;
+      content = content + " ";
+    }
     int signWidth = ((this._width - contentLength) / 2).toInt();
-    print("|" + " " * signWidth + content + " " * (signWidth - 1) + "|");
+    print("|" + " " * signWidth + content + " " * (signWidth) + "|");
     if (end) {
       print(" " + "-" * (this._width));
     }
