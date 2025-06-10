@@ -1,12 +1,15 @@
-import "lib/table.dart" as CLIDesign;
-import "lib/screen.dart" as CLIDesign;
+import "lib/table.dart";
+import "lib/progress.dart";
+import "lib/util.dart";
 
 void main() {
-  CLIDesign.Screen.clear();
-  CLIDesign.Table tbl = new CLIDesign.Table(60);
-  tbl.printHeader("ysfgasdfghsdfgadfg");
-  tbl.printRow("1. <sdfasdfasdfasdfasdf>", false);
-  tbl.printRow("2. sdfasdfasdfasdfasdfasdf", false);
-  tbl.printRow("3. sasdfasdfasdfasdfasdfasdf", false);
-  tbl.printRow("4. 4563456456435643564563456", true);
+  Util.clear();
+  Table tbl = new Table(60);
+  tbl.printHeader("Main Menu", Alignment.CENTER);
+  tbl.printRow("1. Fahrzeug hinzufügen", false, Alignment.LEFT);
+  tbl.printRow("2. Strecke hinzufügen", false, Alignment.LEFT);
+  tbl.printRow("3. Berechnungen ausgeben", false, Alignment.LEFT);
+  tbl.printRow("4. Beenden", true, Alignment.LEFT);
+  Progress prg = new Progress(60);
+  prg.printProgress("", 3);
 }

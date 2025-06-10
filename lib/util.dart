@@ -1,6 +1,6 @@
 import "dart:io";
 
-class Screen {
+class Util {
   static void clear() {
     print(Process.runSync("clear", [], runInShell: true).stdout);
   }
